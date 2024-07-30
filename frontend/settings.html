@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Card</title>
+    <link rel="stylesheet" href="settings.css">
+    <script src="settings.js"></script>
+</head>
+<body>
+    <form id="myForm">
+    <div class="container">
+        <div class="header">
+            <a href="goal-based.html" class="back-arrow">&#8592;</a>
+            <h1 class="heading">Setup/Manage Goal</h1>
+            <div class="avatar">NW</div>
+        </div>
+        <div class="contro">
+            <div class="control">
+                <label for="enable-toggle">Start Saving/Pause Saving</label>
+                <input type="checkbox" id="enable-toggle">
+            </div>
+            
+            <div class="control1">
+                
+                <div class="control2">
+                    <label style="font-weight:bold;color: #6a1b9a;font-size: 18px;">Smart Saving Option</label>
+                </div>
+                <br>
+                <div class="control2">
+                    
+                    <label for="percentage-select">Purchase Amount Range: £20 to £50&nbsp;&nbsp;</label>
+                      <select id="percentage-select">
+                                        <option value="" disabled selected>Percentage</option>
+                                        <option value="5">5</option>
+                                        <option value="10">7</option>
+                                        <option value="20">10</option>
+                    </select>%
+          
+               </div>
+               <br>
+               <div class="control2">
+                <label for="percentage-select2">Purchase Amount Range: £50 to £100</label>
+                <select id="percentage-select2">
+                    <option value="" disabled selected>Percentage</option>
+                    <option value="5">5</option>
+                                        <option value="10">7</option>
+                                        <option value="20">10</option>
+                </select>%
+            </div>
+            </div>
+            <div class="control">
+                <label for="goalamount">Set your Goal Amount:</label>
+                £<input type="text" id="goalamount" width="20%"></input> 
+            </div>
+            <div class="options">
+                <button class="option save-button" onclick="submitForm()">Save</button>
+            </div>
+            <div style="display: inline;color: #0c6823;" id="response"></div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

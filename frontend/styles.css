@@ -1,0 +1,140 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 375px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.header .avatar {
+    background-color: #6a0dad;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.header .icons {
+    display: flex;
+    gap: 10px;
+}
+
+.header .icons img {
+    width: 20px;
+    height: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 5px;
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+.tabs button:hover {
+    background-color: #e0e0e0; /* Light hover effect */
+}
+
+.tabs .active {
+    background-color: #6a0dad;
+    color: #fff;
+}
+
+.account-info {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between; /* Space between children */
+    align-items: center; /* Center align items vertically */
+    cursor: pointer;
+}
+.account-info1 {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    justify-content: space-between; /* Space between children */
+    align-items: center; /* Center align items vertically */
+    cursor: pointer;
+}
+
+.account-details {
+    display: flex;
+    flex-direction: column; /* Stack title and details */
+    justify-content: space-between; 
+}
+.account-summary {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;  
+}
+
+.account-details .title{
+    font-weight: bold;
+
+}
+.account-summary .title{
+    font-weight: bold;
+
+}
+
+.account-details .details {
+    margin-bottom: 5px; /* Added margin for spacing */
+}
+
+.account-details .balance {
+    font-size: 1.5em;
+    margin: 0; /* Remove margins to align properly */
+    text-align: right; /* Align balance text to the right */
+}
+
+.account-info:hover {
+    background-color: #f0e9ef;
+}
+.account-info1:hover {
+    background-color: #f0e9ef;
+}
+
+.account-info .arrow {
+    margin-left: auto;
+    padding-left: 10px;
+}
+.account-info1 .arrow {
+    margin-left: auto;
+    padding-left: 10px;
+}

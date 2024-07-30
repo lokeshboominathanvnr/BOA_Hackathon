@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal-Based Small Savings</title>
+    <link rel="stylesheet" href="goal-based.css">
+    <script src="goal-based.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-arrow">&#8592;</a>
+            <h1 class="heading">My Small Savings</h1>
+            <div class="avatar">NW</div>
+        </div>
+        <div id="smallsavingsdetails">
+        <div class="account-info">
+            <div class="account-details">
+                <div>
+                    <div class="title">Goal-Based Savings</div>
+                    <div class="details">Small Savings | <span id="smallsavingsacc"></span> </div>
+                </div>
+                <div class="balance" id="smallsavingsamt"></div>
+            </div>
+            <br>
+            <div class="account-details">            
+                <div class="details" id="investmentamt">Investment | £1,000</span></div>
+                <div class="details" id="Goal Amount">Goal Amount  | <span id="goalamount"></span></div>           
+            </div> 
+            <div class="progress-bar">
+                <div class="progress" style="width: 10%;"></div>
+            </div>
+        </div>
+        <div class="options">
+            <button class="option">View Transactions <span class="arrow">&gt;</span></button>
+            <button class="option" onclick=settings()>Manage Goal<span class="arrow">&gt;</span></button><br>
+            <button class="option close-account">Close Account</button>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

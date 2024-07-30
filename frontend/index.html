@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Overview</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="base.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="avatar">NW</div>
+            <div class="icons">
+                <img src="bell_icon.png" alt="Notifications">
+                <img src="search_icon.png" alt="Search">
+            </div>
+        </div>
+        <div class="tabs">
+            <button class="active">Personal</button>
+            <button>Business</button>
+        </div>
+        <div class="account-info">
+            <div class="account-details">
+                <div class="title">My Current Account</div>
+                <div class="details">Current | <span  id="currentacc"></span> </div>
+            </div>
+            <div class="balance" id="currentamt"></div>
+        </div>
+        <div class="account-info">
+            <div class="account-details">
+                <div class="title">Savings Account</div>
+                <div class="details">Savings | <span id="savingsacc"></span></div>
+            </div>
+            <div class="balance" id="savingsamt"></div>
+        </div>
+        <div class="account-info1" id="smallsavingsdetails" >
+            
+            <div class="account-details" id="smallsavingsactivate" style="color: rgb(30, 163, 81);"></div>
+            <div class="account-summary" onclick="goalbased()">
+                <div  class="account-details">      
+                    <div class="title">Goal-Based Savings Account</div>
+                    <div class="details">Small Savings | <span id="smallsavingsacc"></span> </div>
+                 </div>
+                <div class="balance" id="smallsavingsamt"></div>
+            </div><br> 
+            <div class="account-summary" onclick="goalbased()">            
+                <div class="balance" id="investmentamt">Investment | £1,000</span></div>
+                <div class="balance" id="Goal Amount">Goal Amount  | <span id="goalamount"></span></div>           
+            </div>       
+        </div>
+    </div>
+</body>
+</html>

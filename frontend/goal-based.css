@@ -1,0 +1,130 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 375px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.header .back-arrow {
+    text-decoration: none;
+    font-size: 24px;
+    color: #6a0dad;
+    margin-right: auto;
+}
+
+.header .heading {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.3em; /* Decreased font size */
+    color: #000; /* Changed color to black */
+}
+
+.header .avatar {
+    background-color: #6a0dad;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.account-info {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.account-info .account-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.account-info .title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.account-info .details {
+    margin-bottom: 5px;
+}
+
+.account-info .balance {
+    font-size: 1.5em;
+    text-align: right;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #6a0dad;
+    border-radius: 5px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+}
+
+.option {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+.option .arrow {
+    margin-left: auto;
+    padding-left: 10px;
+}
+
+.close-account {
+    background-color: #d9534f; /* Changed color for close account button */
+    color: #fff;
+    display: inline-block;
+}
+
+.close-account:hover {
+    background-color: #c9302c; /* Darker shade on hover */
+}

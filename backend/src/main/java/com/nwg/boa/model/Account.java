@@ -40,6 +40,7 @@ public class Account {
     @Column(name = "targetgoal")
     private double  targetgoal ;
 
+    @Column(name = "transactionamt")
     private double  transactionamt ;
 
 

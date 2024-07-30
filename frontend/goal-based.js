@@ -21,7 +21,7 @@ mode:'cors'
   .then(data => {
     if(data.smallsavings === true)
     {
-        smallsavingsAmtElement.innerHTML = `£${data.smallsavingsbalance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}` ;
+        smallsavingsAmtElement.innerHTML = `£${parseFloat(data.smallsavingsbalance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}` ;
         smallsavingsAccElement.innerHTML = `${data.smallsavingsacc}` ;
         goalamountActivateElement.innerHTML = `£${data.targetgoal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}` ;
     }
@@ -38,4 +38,8 @@ mode:'cors'
 function settings()
 {
     window.location.href = './settings.html';
+}
+function faqs()
+{
+    window.location.href = './faq.html';
 }

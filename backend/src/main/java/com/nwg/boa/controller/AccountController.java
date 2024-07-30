@@ -36,7 +36,6 @@ public class AccountController {
     @GetMapping("/account/{id}")
     public ResponseEntity<Account> getAccountById(@PathVariable("id") String id) {
         Account accountData = accountRepository.findBycustomerid(id);
-        System.out.println(accountData);
         if (accountData != null) {
             return new ResponseEntity<>(accountData, HttpStatus.OK);
         } else {
@@ -46,11 +45,8 @@ public class AccountController {
 
     @PostMapping("/makeapayment")
     public ResponseEntity<Account> makeapayment(@RequestBody Account account) {
-        System.out.println(account.getCustomerid());
         Account accountData = accountRepository.findBycustomerid(account.getCustomerid());
-        System.out.println(accountData);
         if (accountData != null) {
-            System.out.println(accountData.isSmallsavings());
 
             if(accountData.isSmallsavings())
            {
@@ -61,14 +57,18 @@ public class AccountController {
 
                 if (account.getTransactionamt() >=10 &&  account.getTransactionamt() <= 50)
                 {
-                    double savingAmt = accountData.getSmallsavingsperc1()/100 * account.getTransactionamt();
+                    double savingAmt = (double) accountData.getSmallsavingsperc1() /100 * account.getTransactionamt();
+                    System.out.println(savingAmt);
                     double totalAmt = account.getTransactionamt() + savingAmt;
+                    System.out.println(totalAmt);
+                    System.out.println(accountData.getSmallsavingsbalance() + savingAmt);
+                    System.out.println(accountData.getSavingsbalance() - totalAmt);
                     accountData.setSmallsavingsbalance(accountData.getSmallsavingsbalance() + savingAmt);
                     accountData.setSavingsbalance(accountData.getSavingsbalance() - totalAmt);
                 }
                 else if (account.getTransactionamt() >50 &&  account.getTransactionamt() <=100)
                 {
-                    double savingAmt = (long) ((double)accountData.getSmallsavingsperc2()/100 * account.getTransactionamt());
+                    double savingAmt = (double)accountData.getSmallsavingsperc2()/100 * account.getTransactionamt();
                     double totalAmt = account.getTransactionamt() + savingAmt;
                     accountData.setSmallsavingsbalance(accountData.getSmallsavingsbalance() + savingAmt);
                     accountData.setSavingsbalance(accountData.getSavingsbalance() - totalAmt);
@@ -91,10 +91,8 @@ public class AccountController {
     @PutMapping("/smallsavingaccount/{id}")
     public ResponseEntity<Account> updateSmallSavings(@PathVariable("id") String id, @RequestBody Account account) {
         Account accountData = accountRepository.findBycustomerid(id);
-        System.out.println(accountData);
         if (accountData != null) {
             accountData.setSmallsavings(account.isSmallsavings());
-            System.out.println("adf"+account.getTargetgoal());
             if(account.isSmallsavings())
             {
                 accountData.setSmallsavingsperc1(account.getSmallsavingsperc1());

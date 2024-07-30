@@ -31,7 +31,7 @@ mode:'cors'
     savingsAccElement.innerHTML = `${data.savingsacc}` ;
     if(data.smallsavings === true || data.smallsavingsacc)
     {
-        smallsavingsAmtElement.innerHTML = `£${data.smallsavingsbalance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}` ;
+        smallsavingsAmtElement.innerHTML = `£${parseFloat(data.smallsavingsbalance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}` ;
         smallsavingsAccElement.innerHTML = `${data.smallsavingsacc}` ;
         goalamountActivateElement.innerHTML = `£${data.targetgoal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}` ;
         if(data.smallsavings === false)

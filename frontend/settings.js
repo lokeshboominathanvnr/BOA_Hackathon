@@ -44,10 +44,10 @@ console.log('Data to be sent:',data);
 fetch(apiSaveUrl,{
     method:'PUT',
     headers:{ 'Content-Type': 'application/json'},
-mode:'cors' ,
 body:JSON.stringify(data)
 })
   .then(response => {
+    alert("Success...");
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }

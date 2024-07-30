@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <link rel="stylesheet" href="faq.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-arrow">&#8592;</a>
+            <h1 class="heading">FAQs</h1>
+            <div class="avatar">NW</div>
+        </div>
+        <div class="faq-section">
+            <div class="faq-item">
+                <button class="faq-question">What is Goal Based Small Saving? <span class="arrow">&#x25B6;</span></button>
+                <div class="faq-answer">
+                    <p>User can save from short saving to fulfil a goal (Annual vacation, Car insurance renewal, Repayment of Loan..) by setting a goal amount and save continuously on all type of purchaces made through Debit card/internet/mobile banking.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How can user enable the Goal Based Small Saving feature?<span class="arrow">&#x25B6;</span></button>
+                <div class="faq-answer">
+                    <p>User can select the option for "Goal-Based Small saving" setup option from Home page of mobile banking/internet banking application.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How to select the appropriate option in Manage My Goal? <span class="arrow">&#x25B6;</span></button>
+                <div class="faq-answer">
+                    <p>User can set a Goal amount(eg 1000 or 2000 or 5000). If the Goal amount is higher, user can select maximum percentage of deduction so that Goal Amount can be achieved quicker.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How is the Goal Based small saving different than usual saving?<span class="arrow">&#x25B6;</span></button>
+                <div class="faq-answer">
+                    <p>On usual saving, user must save some fixed amount fro a definite period. But, Goal based small savings gives the option to save a very minimal amount on every purchase without any restriction.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What will happen when the Goal amount is reached?<span class="arrow">&#x25B6;</span></button>
+                <div class="faq-answer">
+                    <p>The user will get a notification as well as the Goal amount along with the interest earned on that will be credited to Saivng account when goal amount is reached.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.faq-question').forEach((button) => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const arrow = button.querySelector('.arrow');
+
+                document.querySelectorAll('.faq-answer').forEach((ans) => {
+                    if (ans !== answer) {
+                        ans.style.display = 'none';
+                        ans.previousElementSibling.querySelector('.arrow').textContent = '\u25B6';
+                    }
+                });
+
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                arrow.textContent = arrow.textContent === '\u25B6' ? '\u25BC' : '\u25B6';
+            });
+        });
+    </script>
+</body>
+</html>

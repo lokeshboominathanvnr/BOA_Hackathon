@@ -11,6 +11,8 @@ const smallsavingsAccElement = document.getElementById('smallsavingsacc');
 const smallsavingsdetailsElement = document.getElementById('smallsavingsdetails');
 const smallsavingsActivateElement = document.getElementById('smallsavingsactivate');
 const goalamountActivateElement = document.getElementById('goalamount');
+const invamountActivateElement = document.getElementById('invamount');
+
 fetch(apiUrl,{
     method:'GET',
     headers:{ 'Content-Type': 'application/json'},
@@ -25,8 +27,8 @@ mode:'cors'
   .then(data => {
     const curr = data.currentbalance ;
     const savings = data.savingsbalance ;
-    currentAmtElement.innerHTML = `£${curr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}` ;
-    savingsAmtElement.innerHTML = `£${savings.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}` ;
+    currentAmtElement.innerHTML = `£${(curr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}` ;
+    savingsAmtElement.innerHTML = `£${(savings.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}`;
     currentAccElement.innerHTML = `${data.currentacc}` ;
     savingsAccElement.innerHTML = `${data.savingsacc}` ;
     if(data.smallsavings === true || data.smallsavingsacc)
@@ -34,6 +36,7 @@ mode:'cors'
         smallsavingsAmtElement.innerHTML = `£${parseFloat(data.smallsavingsbalance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}` ;
         smallsavingsAccElement.innerHTML = `${data.smallsavingsacc}` ;
         goalamountActivateElement.innerHTML = `£${data.targetgoal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}` ;
+        invamountActivateElement.innerHTML = `£${parseFloat((data.smallsavingsbalance + data.smallsavingsbalance * 10/100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}` ;
         if(data.smallsavings === false)
         {
           smallsavingsActivateElement.innerHTML = `<p>Activate back to enjoy your <a href="./settings.html"><b>Goal Savings</b></a></p>` ;
@@ -42,7 +45,7 @@ mode:'cors'
     else
     {
       
-        smallsavingsdetailsElement.innerHTML = `<p>Set up a <a href="./settings.html"><b>Goal-Based Savings</b></a> today and start saving</p>` ;
+        smallsavingsdetailsElement.innerHTML = `<p class='newfeature'>New Feature </p><p>Set up a <a href="./settings.html"><b>Goal-Based Savings</b></a> today and start saving</p>` ;
     }
 
   })

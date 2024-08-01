@@ -38,22 +38,22 @@ function submitForm(){
 const dropdown = document.getElementById('percentage-select');
 const dropdown2 = document.getElementById('percentage-select2');
 const goalamount = document.getElementById('goalamount');
-const message = document.getElementById('response');
 const data = {smallsavings : checkbox.checked,smallsavingsperc1 : dropdown.value,smallsavingsperc2 : dropdown2.value,targetgoal:goalamount.value};
-console.log('Data to be sent:',data);
 fetch(apiSaveUrl,{
     method:'PUT',
     headers:{ 'Content-Type': 'application/json'},
 body:JSON.stringify(data)
 })
   .then(response => {
-    alert("Success...");
+    alert("Your information saved successfully...");
+    window.location.href = 'index.html';
+
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
     return response.json();
   })
-  .then(data => {   
+  .then(data => { 
     window.location.href = 'index.html';
    
   })

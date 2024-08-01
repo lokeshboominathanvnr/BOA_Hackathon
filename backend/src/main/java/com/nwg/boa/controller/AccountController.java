@@ -70,6 +70,10 @@ public class AccountController {
                 {
                     double savingAmt = (double)accountData.getSmallsavingsperc2()/100 * account.getTransactionamt();
                     double totalAmt = account.getTransactionamt() + savingAmt;
+                    System.out.println(savingAmt);
+                    System.out.println(totalAmt);
+
+                    System.out.print(accountData.getSmallsavingsbalance());
                     accountData.setSmallsavingsbalance(accountData.getSmallsavingsbalance() + savingAmt);
                     accountData.setSavingsbalance(accountData.getSavingsbalance() - totalAmt);
                 }
